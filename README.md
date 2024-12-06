@@ -13,16 +13,25 @@ You must complete these steps:
 # FAQ
 
 Q: Can I get banned using this mod menu?
+
 A: Yes, you can get banned, beacuse it`s illegal!
 
+
 Q: Is Utilla required to use Vapezyy Menu?
+
 A: No it is'nt required, but if you don't want be banned, use modded gamemodes!
 
+
 Q: Why is this look like [ii's stupid menu](https://github.com/iiDk-the-actual/iis.Stupid.Menu)?
+
 A: Its beacuse Vapezyy Menu is a reworked version of [ii's stupid menu](https://github.com/iiDk-the-actual/iis.Stupid.Menu)!
 
+
 Q: How to enable Vapezyy Menu?
+
 A: Click 'Y' button on your controller or 'Q' on pc!
 
+
 Q: Why Kick Gun is not kicking every time i use it?
+
 A: It`s beacuse Kick Gun send many data, so if you using Kick Gun too fast it sends too many data!

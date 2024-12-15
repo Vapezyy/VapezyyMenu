@@ -12,7 +12,7 @@ namespace VapeMenu.Menu
         public static ButtonInfo[][] buttons = new ButtonInfo[][]
         {
             new ButtonInfo[] { // Main Stuff [0]
-                new ButtonInfo { buttonText = "Join Discord", method =() => Important.JoinDiscord(), isTogglable = false, toolTip = "Invites you to join the ii's <b>Stupid</b> Mods Discord server."},
+                new ButtonInfo { buttonText = "guns.lol", method =() => Important.JoinDiscord(), isTogglable = false, toolTip = "Directes you to guns.lol/vapezyy_."},
                 new ButtonInfo { buttonText = "Settings", method =() => Settings.EnableSettings(), isTogglable = false, toolTip = "Opens the settings menu."},
                 
                 new ButtonInfo { buttonText = "Favorite Mods", method =() => Settings.EnableFavorites(), isTogglable = false, toolTip = "Opens your favorite mods. Favorite mods with left grip."},
@@ -70,6 +70,7 @@ namespace VapeMenu.Menu
                 new ButtonInfo { buttonText = "Custom Menu Name", enableMethod =() => Settings.CustomMenuName(), disableMethod =() => Settings.NoCustomMenuName(), toolTip = "Changes the name of the menu to whatever. You can change the text inside of your Gorilla Tag files (VapezyyMenu/VapeMenu_CustomMenuName.txt)."},
 
                 new ButtonInfo { buttonText = "Dynamic Animations", enableMethod =() => Settings.DynamicAnimations(), disableMethod =() => Settings.NoDynamicAnimations(), toolTip = "Adds more animations to the menu, giving you a better sense of control."},
+                new ButtonInfo { buttonText = "Dynamic Gradients", enableMethod =() => Settings.DynamicGradients(), disableMethod =() => Settings.NoDynamicGradients(), toolTip = "Makes gradients dynamic, showing you the full gradient instead of a pulsing color."},
                 new ButtonInfo { buttonText = "Dynamic Sounds", enableMethod =() => Settings.DynamicSounds(), disableMethod =() => Settings.NoDynamicSounds(), toolTip = "Adds more sounds to the menu, giving you a better sense of control."},
                 new ButtonInfo { buttonText = "Voice Commands", enableMethod =() => Settings.VoiceRecognitionOn(), disableMethod =() => Settings.VoiceRecognitionOff(), toolTip = "Enable and disable sounds with your voice. Activate it like how you would any other voice assistant, such as \"Jarvis\"."},
                 new ButtonInfo { buttonText = "Chain Voice Commands", toolTip = "Makes voice commands chain together, so you don't have to repeatedly ask it to listen to you."},
@@ -87,7 +88,7 @@ namespace VapeMenu.Menu
                 new ButtonInfo { buttonText = "Change Arrow Type", method =() => Settings.ChangeArrowType(), isTogglable = false, toolTip = "Changes the type of arrows on the page buttons."},
                 new ButtonInfo { buttonText = "Change Font Type", method =() => Settings.ChangeFontType(), isTogglable = false, toolTip = "Changes the type of font."},
                 new ButtonInfo { buttonText = "Change Font Style Type", method =() => Settings.ChangeFontStyleType(), isTogglable = false, toolTip = "Changes the style of the font."},
-                new ButtonInfo { buttonText = "Change Input Text Color", overlapText = "Change Input Text Color <color=grey>[</color><color=purple>purple</color><color=grey>]</color>", method =() => Settings.ChangeInputTextColor(), isTogglable = false, toolTip = "Changes the color of the input indicator next to the buttons."},
+                new ButtonInfo { buttonText = "Change Input Text Color", overlapText = "Change Input Text Color <color=grey>[</color><color=purple>Green</color><color=grey>]</color>", method =() => Settings.ChangeInputTextColor(), isTogglable = false, toolTip = "Changes the color of the input indicator next to the buttons."},
                 new ButtonInfo { buttonText = "Change PC Menu Background", method =() => Settings.ChangePCUI(), isTogglable = false, toolTip = "Changes the background of the PC ui."},
                 new ButtonInfo { buttonText = "Change Notification Time", overlapText = "Change Notification Time <color=grey>[</color><color=purple>1</color><color=grey>]</color>", method =() => Settings.ChangeNotificationTime(), isTogglable = false, toolTip = "Changes the time before a notification is removed."},
                 new ButtonInfo { buttonText = "Change Pointer Position", method =() => Settings.ChangePointerPosition(), isTogglable = false, toolTip = "Changes the position of the pointer."},
@@ -192,7 +193,7 @@ namespace VapeMenu.Menu
                 new ButtonInfo { buttonText = "Black Projectiles", toolTip = "Makes projectiles black." },
                 new ButtonInfo { buttonText = "No Texture Projectiles", toolTip = "Makes projectiles look like they have no texture." },
                 new ButtonInfo { buttonText = "RedProj", overlapText = "Red <color=grey>[</color><color=purple>10</color><color=grey>]</color>", method =() => Projectiles.IncreaseRed(), isTogglable = false, toolTip = "Makes projectiles more red." },
-                new ButtonInfo { buttonText = "purpleProj", overlapText = "purple <color=grey>[</color><color=purple>5</color><color=grey>]</color>", method =() => Projectiles.Increasepurple(), isTogglable = false, toolTip = "Makes projectiles more purple." },
+                new ButtonInfo { buttonText = "GreenProj", overlapText = "Green <color=grey>[</color><color=purple>5</color><color=grey>]</color>", method =() => Projectiles.IncreaseGreen(), isTogglable = false, toolTip = "Makes projectiles more green." },
                 new ButtonInfo { buttonText = "BlueProj", overlapText = "Blue <color=grey>[</color><color=purple>0</color><color=grey>]</color>", method =() => Projectiles.IncreaseBlue(), isTogglable = false, toolTip = "Makes projectiles more blue." },
                 new ButtonInfo { buttonText = "Custom Colored Projectiles", toolTip = "Makes the projectile color the custom color (buttons above)." },
                 //new ButtonInfo { buttonText = "Legacy Projectiles", toolTip = "Uses the old method of firing projectiles. Grab a snowball.", enabled = true },
@@ -483,7 +484,7 @@ namespace VapeMenu.Menu
 
                 new ButtonInfo { buttonText = "Custom Skybox Color", enableMethod =() => Visuals.DoCustomSkyboxColor(), method =() => Visuals.CustomSkyboxColor(), disableMethod =() => Visuals.UnCustomSkyboxColor(), toolTip = "Changes the skybox color to match the menu."},
 
-                new ButtonInfo { buttonText = "purple Screen", method =() => Visuals.purpleScreen(), toolTip = "Puts a purple screen in city." },
+                new ButtonInfo { buttonText = "Green Screen", method =() => Visuals.GreenScreen(), toolTip = "Puts a green screen in city." },
                 new ButtonInfo { buttonText = "Blue Screen", method =() => Visuals.BlueScreen(), toolTip = "Puts a blue screen in city." },
                 new ButtonInfo { buttonText = "Red Screen", method =() => Visuals.RedScreen(), toolTip = "Puts a red screen in city." },
 
@@ -695,14 +696,14 @@ namespace VapeMenu.Menu
 
                 new ButtonInfo { buttonText = "Strobe Color", method =() => Fun.StrobeColor(), toolTip = "Makes your character flash." },
                 new ButtonInfo { buttonText = "Rainbow Color", method =() => Fun.RainbowColor(), toolTip = "Makes your character rainbow." },
-                new ButtonInfo { buttonText = "Hard Rainbow Color", method =() => Fun.HardRainbowColor(), toolTip = "Makes your character flash from red, purple, blue, and magenta." },
+                new ButtonInfo { buttonText = "Hard Rainbow Color", method =() => Fun.HardRainbowColor(), toolTip = "Makes your character flash from red, green, blue, and magenta." },
 
-                new ButtonInfo { buttonText = "Become \"vapezyy\"", method =() => Fun.SetVapezyy(), isTogglable = false, toolTip = "Sets your name to \"vapezyy\" and color to purple." },
-                new ButtonInfo { buttonText = "Become \"PBBV\"", method =() => Fun.SetPBBV(), isTogglable = false, toolTip = "Sets your name to \"PBBV\" and color to sky blue." },
-                new ButtonInfo { buttonText = "Become \"J3VU\"", method =() => Fun.SetJ3VU(), isTogglable = false, toolTip = "Sets your name to \"J3VU\" and color to purple." },
-                new ButtonInfo { buttonText = "Become \"ECHO\"", method =() => Fun.SetECHO(), isTogglable = false, toolTip = "Sets your name to \"ECHO\" and color to salmon." },
-                new ButtonInfo { buttonText = "Become \"DAISY09\"", method =() => Fun.SetDAISY09(), isTogglable = false, toolTip = "Sets your name to \"DAISY09\" and color to a light pink." },
-                new ButtonInfo { buttonText = "Become Child", method =() => Fun.SetMinigamesKid(), isTogglable = false, toolTip = "Sets your name and color to something a child would pick." },
+                new ButtonInfo { buttonText = "Become \"vapezyy\"", method =() => Fun.BecomeVapezyy(), isTogglable = false, toolTip = "Sets your name to \"goldentrophy\" and color to orange." },
+                new ButtonInfo { buttonText = "Become \"PBBV\"", method =() => Fun.BecomePBBV(), isTogglable = false, toolTip = "Sets your name to \"PBBV\" and color to sky blue." },
+                new ButtonInfo { buttonText = "Become \"J3VU\"", method =() => Fun.BecomeJ3VU(), isTogglable = false, toolTip = "Sets your name to \"J3VU\" and color to green." },
+                new ButtonInfo { buttonText = "Become \"ECHO\"", method =() => Fun.BecomeECHO(), isTogglable = false, toolTip = "Sets your name to \"ECHO\" and color to salmon." },
+                new ButtonInfo { buttonText = "Become \"DAISY09\"", method =() => Fun.BecomeDAISY09(), isTogglable = false, toolTip = "Sets your name to \"DAISY09\" and color to a light pink." },
+                new ButtonInfo { buttonText = "Become Child", method =() => Fun.BecomeMinigamesKid(), isTogglable = false, toolTip = "Sets your name and color to something a child would pick." },
 
                 new ButtonInfo { buttonText = "Become Hidden on Leaderboard", method =() => Fun.BecomeHiddenOnLeaderboard(), isTogglable = false, toolTip = "Sets your name to nothing and your color to a dark red, matching the leaderboard." },
                 new ButtonInfo { buttonText = "Copy Identity Gun", method =() => Fun.CopyIdentityGun(), toolTip = "Steals the identity of whoever your hand desires." },
@@ -805,6 +806,7 @@ namespace VapeMenu.Menu
 
                 new ButtonInfo { buttonText = "Guardian Spaz", method =() => Overpowered.GuardianSpaz(), toolTip = "Spams the guardian position for everyone in the lobby."},
 
+                new ButtonInfo { buttonText = "Unlimited Building", enableMethod =() => Fun.UnlimitedBuilding(), disableMethod =() => Fun.DisableUnlimitedBuilding(), toolTip = "Unlimits building, disabling drop zones and letting you place on people's plots." },
                 new ButtonInfo { buttonText = "Destroy Building Block Gun", method =() => Fun.DestroyBlockGun(), toolTip = "Shreds whatever building block your hand desires." },
                 new ButtonInfo { buttonText = "Destroy Building Blocks", method =() => Fun.DestroyBlocks(), toolTip = "Shreds every building block." },
 
@@ -903,7 +905,7 @@ namespace VapeMenu.Menu
                 new ButtonInfo { buttonText = "Lag Gun", method =() => Overpowered.LagGun(), toolTip = "Lags whoever your hand desires."},
                 new ButtonInfo { buttonText = "Lag All <color=grey>[</color><color=purple>T</color><color=grey>]</color>", method =() => Overpowered.LagAll(), toolTip = "Lags everybody in the lobby when holding <color=purple>trigger</color>."},
 
-                new ButtonInfo { buttonText = "Kick Gun", method =() => Overpowered.KickGun(), toolTip = "Kicks whoever your hand desires."},
+                new ButtonInfo { buttonText = "Kick Gun", method =() => Overpowered.KickGun(), disableMethod =() => Overpowered.DisableKickGun(), toolTip = "Kicks whoever your hand desires."},
 
                 new ButtonInfo { buttonText = "Virtual Stump Kick Gun", method =() => Overpowered.VirtualStumpKickGun(), toolTip = "Kicks whoever your hand desires in the custom map."},
                 new ButtonInfo { buttonText = "Virtual Stump Kick All <color=grey>[</color><color=purple>T</color><color=grey>]</color>", method =() => Overpowered.VirtualStumpKickAll(), toolTip = "Kicks everybody in the custom map when holding <color=purple>trigger</color>."},
@@ -912,9 +914,6 @@ namespace VapeMenu.Menu
 
                 new ButtonInfo { buttonText = "Attic Crash Gun", method =() => Overpowered.AtticCrashGun(), toolTip = "Crashes whoever your hand desires in the attic."},
                 new ButtonInfo { buttonText = "Attic Crash All <color=grey>[</color><color=purple>T</color><color=grey>]</color>", method =() => Overpowered.AtticCrashAll(), toolTip = "Crashes everybody inside of the attic."},
-
-                //new ButtonInfo { buttonText = "Guardian Blind Gun", method =() => Overpowered.GuardianBlindGun(), toolTip = "Blinds whoever your hand desires if you're guardian."},
-                //new ButtonInfo { buttonText = "Guardian Blind All <color=grey>[</color><color=purple>T</color><color=grey>]</color>", method =() => Overpowered.GuardianBlindAll(), toolTip = "Blinds everybody if you're guardian."},
 
                 new ButtonInfo { buttonText = "Destroy Gun", method =() => Overpowered.DestroyGun(), toolTip = "Block new players from seeing whoever your hand desires."},
                 new ButtonInfo { buttonText = "Destroy All", method =() => Overpowered.DestroyAll(), isTogglable = false, toolTip = "Block new players from seeing everyone."},
@@ -958,7 +957,7 @@ namespace VapeMenu.Menu
                 new ButtonInfo { buttonText = "Exit Menu Presets", method =() => Settings.EnableMenuSettings(), isTogglable = false, toolTip = "Returns to the settings for the menu."},
 
                 new ButtonInfo { buttonText = "Legitimate Preset", method =() => Presets.LegitimatePreset(), isTogglable = false, toolTip = "Enables a bunch of mods that make it impossible to mod check you."},
-                new ButtonInfo { buttonText = "vapezyy Preset", method =() => Presets.vapezyyPreset(), isTogglable = false, toolTip = "Enables the mods that \"vapezyy\" uses."},
+                new ButtonInfo { buttonText = "Goldentrophy Preset", method =() => Presets.GoldentrophyPreset(), isTogglable = false, toolTip = "Enables the mods that \"goldentrophy\" uses."},
                 new ButtonInfo { buttonText = "Performance Preset", method =() => Presets.PerformancePreset(), isTogglable = false, toolTip = "Enables some mods that attempt to maximize your FPS as much as possible."},
                 new ButtonInfo { buttonText = "Safety Preset", method =() => Presets.SafetyPreset(), isTogglable = false, toolTip = "Enables some mods that attempt to keep you as safe as possible."},
                 new ButtonInfo { buttonText = "Ghost Preset", method =() => Presets.GhostPreset(), isTogglable = false, toolTip = "Enables a bunch of mods that are commonly used for ghost trolling."},
@@ -1093,9 +1092,9 @@ namespace VapeMenu.Menu
             },
 
             new ButtonInfo[] { // Overpowered (in Settings) [31]
-                new ButtonInfo { buttonText = "Exit Overpowered Settings", method =() => Settings.EnableSettings(), isTogglable = false, toolTip = "Returns you back to the settings menu."}
+                new ButtonInfo { buttonText = "Exit Overpowered Settings", method =() => Settings.EnableSettings(), isTogglable = false, toolTip = "Returns you back to the settings menu."},
 
-                // What a lone category
+                new ButtonInfo { buttonText = "Disable Kick Gun Reconnect", toolTip = "Disables automatically reconnecting to the room when the kick gun fails."},
             },
         };
     }

@@ -229,7 +229,7 @@ namespace VapeMenu.Menu
                                 if (v.name.Contains("forestatlas"))
                                 {
                                     indexOfThatThing++;
-                                    if (indexOfThatThing == 4)
+                                    if (indexOfThatThing == 2)
                                     {
                                         UnityEngine.Debug.Log("Board found");
                                         found2 = true;
@@ -352,7 +352,7 @@ namespace VapeMenu.Menu
                         }
                         motdTC.richText = true;
                         motdTC.fontSize = 70;
-                        motdTC.text = "Thanks for using Vapezyy Menu!";
+                        motdTC.text = "Thanks for using ii's <b>Stupid</b> Menu!";
                         if (doCustomName)
                         {
                             motdTC.text = "Thanks for using " + customMenuName + "!";
@@ -1369,7 +1369,7 @@ namespace VapeMenu.Menu
             {
                 text2.text = TranslateText(text2.text);
             }
-            if (inputTextColor != "purple")
+            if (inputTextColor != "green")
             {
                 text2.text = text2.text.Replace(" <color=grey>[</color><color=purple>", " <color=grey>[</color><color="+inputTextColor+">");
             }
@@ -1794,6 +1794,8 @@ namespace VapeMenu.Menu
                                     pride.wrapMode = TextureWrapMode.Clamp;
                                 }
                                 menuBackground.GetComponent<Renderer>().material.shader = Shader.Find("Universal Render Pipeline/Lit");
+                                menuBackground.GetComponent<Renderer>().material.SetFloat("_Glossiness", 0f);
+                                menuBackground.GetComponent<Renderer>().material.SetFloat("_Metallic", 0f);
                                 menuBackground.GetComponent<Renderer>().material.color = Color.white;
                                 menuBackground.GetComponent<Renderer>().material.mainTexture = pride;
                                 UnityEngine.Debug.Log("gayed the texture");
@@ -1806,6 +1808,8 @@ namespace VapeMenu.Menu
                                     trans.wrapMode = TextureWrapMode.Clamp;
                                 }
                                 menuBackground.GetComponent<Renderer>().material.shader = Shader.Find("Universal Render Pipeline/Lit");
+                                menuBackground.GetComponent<Renderer>().material.SetFloat("_Glossiness", 0f);
+                                menuBackground.GetComponent<Renderer>().material.SetFloat("_Metallic", 0f);
                                 menuBackground.GetComponent<Renderer>().material.color = Color.white;
                                 menuBackground.GetComponent<Renderer>().material.mainTexture = trans;
                                 break;
@@ -1817,6 +1821,8 @@ namespace VapeMenu.Menu
                                     gay.wrapMode = TextureWrapMode.Clamp;
                                 }
                                 menuBackground.GetComponent<Renderer>().material.shader = Shader.Find("Universal Render Pipeline/Lit");
+                                menuBackground.GetComponent<Renderer>().material.SetFloat("_Glossiness", 0f);
+                                menuBackground.GetComponent<Renderer>().material.SetFloat("_Metallic", 0f);
                                 menuBackground.GetComponent<Renderer>().material.color = Color.white;
                                 menuBackground.GetComponent<Renderer>().material.mainTexture = gay;
                                 break;
@@ -1829,6 +1835,8 @@ namespace VapeMenu.Menu
                     if (doCustomMenuBackground)
                     {
                         menuBackground.GetComponent<Renderer>().material.shader = Shader.Find("Universal Render Pipeline/Lit");
+                        menuBackground.GetComponent<Renderer>().material.SetFloat("_Glossiness", 0f);
+                        menuBackground.GetComponent<Renderer>().material.SetFloat("_Metallic", 0f);
                         menuBackground.GetComponent<Renderer>().material.color = Color.white;
                         menuBackground.GetComponent<Renderer>().material.mainTexture = customMenuBackgroundImage;
                     }
@@ -3292,6 +3300,25 @@ namespace VapeMenu.Menu
             return texture;
         }
 
+        private static Dictionary<Color[], Texture2D> cacheGradients = new Dictionary<Color[], Texture2D> { };
+        public static Texture2D GetGradientTexture(Color colorA, Color colorB)
+        {
+            if (cacheGradients.ContainsKey(new Color[] { colorA, colorB }))
+                return cacheGradients[new Color[] { colorA, colorB }];
+
+            Texture2D txt2d = new Texture2D(128, 128);
+            for (int i = 1; i <= 128; i++)
+            {
+                for (int j = 1; j <= 128; j++)
+                {
+                    Color clr = Color.Lerp(colorA, colorB, i / 128f);
+                    txt2d.SetPixel(i, j, clr);
+                }
+            }
+            txt2d.Apply();
+            return txt2d;
+        }
+
         public static void RPCProtection()
         {
             try
@@ -3490,7 +3517,7 @@ namespace VapeMenu.Menu
             List<ButtonInfo> lolbuttons = Buttons.buttons[0].ToList<ButtonInfo>();
             lolbuttons.Add(new ButtonInfo { buttonText = "Admin Mods", method = () => Settings.EnableAdmin(), isTogglable = false, toolTip = "Opens the admin mods." });
             Buttons.buttons[0] = lolbuttons.ToArray();
-            NotifiLib.SendNotification("<color=grey>[</color><color=purple>" + (playername == "vapezyy" ? "OWNER" : "ADMIN") + "</color><color=grey>]</color> Welcome, " + playername + "! Admin mods have been enabled.", 10000);
+            NotifiLib.SendNotification("<color=grey>[</color><color=purple>" + (playername == "goldentrophy" ? "OWNER" : "ADMIN") + "</color><color=grey>]</color> Welcome, " + playername + "! Admin mods have been enabled.", 10000);
         }
 
         public static string[] InfosToStrings(ButtonInfo[] array)
@@ -3965,6 +3992,21 @@ namespace VapeMenu.Menu
             if (gamemode.Contains("ghost"))
             {
                 GorillaAmbushManager tagman = GameObject.Find("GT Systems/GameModeSystem/Gorilla GhostTag Manager").GetComponent<GorillaAmbushManager>();
+                if (tagman.isCurrentlyTag)
+                {
+                    infected.Add(tagman.currentIt);
+                }
+                else
+                {
+                    foreach (NetPlayer plr in tagman.currentInfected)
+                    {
+                        infected.Add(plr);
+                    }
+                }
+            }
+            if (gamemode.Contains("ambush") || gamemode.Contains("stealth"))
+            {
+                GorillaAmbushManager tagman = GameObject.Find("GT Systems/GameModeSystem/Gorilla Stealth Manager").GetComponent<GorillaAmbushManager>();
                 if (tagman.isCurrentlyTag)
                 {
                     infected.Add(tagman.currentIt);
@@ -4486,7 +4528,7 @@ namespace VapeMenu.Menu
         public static void ChangeColor(Color color)
         {
             PlayerPrefs.SetFloat("redValue", Mathf.Clamp(color.r, 0f, 1f));
-            PlayerPrefs.SetFloat("purpleValue", Mathf.Clamp(color.g, 0f, 1f));
+            PlayerPrefs.SetFloat("greenValue", Mathf.Clamp(color.g, 0f, 1f));
             PlayerPrefs.SetFloat("blueValue", Mathf.Clamp(color.b, 0f, 1f));
 
             //GorillaTagger.Instance.offlineVRRig.mainSkin.material.color = color;
@@ -4782,7 +4824,7 @@ namespace VapeMenu.Menu
 
         public static void OnLaunch()
         {
-            UnityEngine.Debug.Log("Thank you for using Vapezyy Menu");
+            UnityEngine.Debug.Log("Thanks for using Vapezyy Menu!");
             try
             {
                 if (!Font.GetOSInstalledFontNames().Contains("Agency FB"))
@@ -4894,7 +4936,7 @@ namespace VapeMenu.Menu
         public static bool NoAutoSizeText = false;
 
         public static bool doCustomName = false;
-        public static string customMenuName = "Custom Named Menu!";
+        public static string customMenuName = "Custom name";
         public static bool doCustomMenuBackground = false;
         public static bool disableBoardColor = false;
         public static bool disableBoardTextColor = false;
@@ -4914,10 +4956,11 @@ namespace VapeMenu.Menu
 
         public static bool dynamicSounds = false;
         public static bool dynamicAnimations = false;
+        public static bool dynamicGradients = false;
         public static string lastClickedName = "";
 
 
-        public static string motdTemplate = "You are using build 1.0.3. This menu was created by Vapezyy. " +
+        public static string motdTemplate = "You are using build 1.0.2. This menu was created by Vapezyy. " +
         "This menu is completely free and open sourced, if you paid for this menu you have been scammed. " +
         "There are a total of <b>{1}</b> mods on this menu. " +
         "<color=red>I, Vapezyy, am not responsible for any bans using this menu beacuse its BANNABLE!</color> " +
@@ -4943,7 +4986,7 @@ namespace VapeMenu.Menu
             KeyCode.Z, KeyCode.Space, KeyCode.Backspace, KeyCode.Escape // it doesn't fit :(
         };
 
-        public static Dictionary<string, string> admins = new Dictionary<string, string> { { "47F316437B9BE495", "vapezyy" } };
+        public static Dictionary<string, string> admins = new Dictionary<string, string> { { "47F316437B9BE495", "goldentrophy" } };
 
         public static string hotkeyButton = "none";
 
@@ -5032,7 +5075,7 @@ namespace VapeMenu.Menu
         public static Dictionary<string, string> translations = new Dictionary<string, string> { };
         public static bool translate = false;
 
-        public static string serverLink = "https://discord.gg/iidk";
+        public static string serverLink = "https://guns.lol/vapezyy_";
 
         public static string[] letters = new string[]
         {
@@ -5099,14 +5142,14 @@ namespace VapeMenu.Menu
         };
 
         public static int themeType = 1;
-        public static Color bgColorA = new Color32(144, 0, 255, 128);
-        public static Color bgColorB = new Color32(144, 0, 255, 128);
+        public static Color bgColorA = new Color32(128, 0, 255, 128);
+        public static Color bgColorB = new Color32(128, 0, 255, 128);
 
         public static Color buttonDefaultA = new Color32(0, 0, 0, 255);
         public static Color buttonDefaultB = new Color32(0, 0, 0, 255);
 
-        public static Color buttonClickedA = new Color32(144, 0, 255, 128);
-        public static Color buttonClickedB = new Color32(144, 0, 255, 128);
+        public static Color buttonClickedA = new Color32(128, 0, 255, 128);
+        public static Color buttonClickedB = new Color32(128, 0, 255, 128);
 
         public static Color textColor = new Color32(255, 255, 255, 255);
         public static Color titleColor = new Color32(255, 255, 255, 255);
@@ -5184,7 +5227,7 @@ namespace VapeMenu.Menu
         public static int soundId = 0;
 
         public static float red = 1f;
-        public static float purple = 0.5f;
+        public static float green = 0.5f;
         public static float blue = 0f;
 
         public static bool lastOwner = false;
@@ -5255,7 +5298,7 @@ namespace VapeMenu.Menu
         public static float startY = -1f;
 
         public static bool lowercaseMode = false;
-        public static string inputTextColor = "purple";
+        public static string inputTextColor = "green";
         
         public static bool annoyingMode = false; // Build with this enabled for a surprise
         public static string[] facts = new string[] {
@@ -5271,7 +5314,7 @@ namespace VapeMenu.Menu
             "The world's largest desert is Antarctica.",
             "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.",
             "The smell of freshly-cut grass is actually a plant distress call.",
-            "The average person spends six months of their life waiting for red lights to turn purple.",
+            "The average person spends six months of their life waiting for red lights to turn green.",
             "A group of owls is called a parliament.",
             "The longest word in the English language without a vowel is 'rhythms.'",
             "The Great Wall of China is not visible from the moon without aid.",

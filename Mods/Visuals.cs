@@ -156,9 +156,9 @@ namespace VapeMenu.Mods
             sky.GetComponent<Renderer>().material = oldSkyMat;
         }
 
-        public static void purpleScreen()
+        public static void GreenScreen()
         {
-            Color bgcolor = Color.magenta;
+            Color bgcolor = Color.green;
 
             GameObject a = GameObject.CreatePrimitive(PrimitiveType.Cube);
             UnityEngine.Object.Destroy(a.GetComponent<Rigidbody>());
@@ -276,7 +276,7 @@ namespace VapeMenu.Mods
             if (GetIndex("Hidden Labels").enabled) { go.layer = 19; }
             go.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
             TextMesh textMesh = go.AddComponent<TextMesh>();
-            textMesh.color = GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity.magnitude >= GorillaLocomotion.Player.Instance.maxJumpSpeed ? Color.magenta : Color.white;
+            textMesh.color = GorillaLocomotion.Player.Instance.GetComponent<Rigidbody>().velocity.magnitude >= GorillaLocomotion.Player.Instance.maxJumpSpeed ? Color.green : Color.white;
             textMesh.fontSize = 24;
             textMesh.fontStyle = activeFontStyle;
             textMesh.characterSize = 0.1f;
@@ -323,7 +323,7 @@ namespace VapeMenu.Mods
                     if (GetIndex("Hidden Labels").enabled) { go.layer = 19; }
                     go.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
                     TextMesh textMesh = go.AddComponent<TextMesh>();
-                    textMesh.color = PlayerIsTagged(GorillaTagger.Instance.offlineVRRig) ? Color.magenta : Color.white;
+                    textMesh.color = PlayerIsTagged(GorillaTagger.Instance.offlineVRRig) ? Color.green : Color.white;
                     textMesh.fontSize = 24;
                     textMesh.fontStyle = activeFontStyle;
                     textMesh.characterSize = 0.1f;
@@ -363,7 +363,7 @@ namespace VapeMenu.Mods
                 }
                 if (closest != float.MaxValue)
                 {
-                    Color colorn = Color.magenta;
+                    Color colorn = Color.green;
                     if (closest < 30f)
                     {
                         colorn = Color.yellow;
@@ -414,7 +414,7 @@ namespace VapeMenu.Mods
                 if (GetIndex("Hidden Labels").enabled) { go.layer = 19; }
                 go.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
                 TextMesh textMesh = go.AddComponent<TextMesh>();
-                textMesh.color = left <= 1 && !PlayerIsTagged(GorillaTagger.Instance.offlineVRRig) ? Color.magenta : Color.white;
+                textMesh.color = left <= 1 && !PlayerIsTagged(GorillaTagger.Instance.offlineVRRig) ? Color.green : Color.white;
                 textMesh.fontSize = 24;
                 textMesh.fontStyle = activeFontStyle;
                 textMesh.characterSize = 0.1f;
@@ -616,7 +616,7 @@ namespace VapeMenu.Mods
         {
             foreach (GameObject g in Resources.FindObjectsOfTypeAll<GameObject>())
             {
-                if (g.activeSelf && (g.name.Contains("leaves_purple") || g.name.Contains("fallleaves")))
+                if (g.activeSelf && (g.name.Contains("leaves_green") || g.name.Contains("fallleaves")))
                 {
                     g.SetActive(false);
                     leaves.Add(g);
@@ -637,7 +637,7 @@ namespace VapeMenu.Mods
         {
             foreach (GameObject g in Resources.FindObjectsOfTypeAll<GameObject>())
             {
-                if (g.activeSelf && (g.name.Contains("leaves_purple") || g.name.Contains("fallleaves")))
+                if (g.activeSelf && (g.name.Contains("leaves_green") || g.name.Contains("fallleaves")))
                 {
                     g.layer = 16;
                     leaves.Add(g);
@@ -734,7 +734,7 @@ namespace VapeMenu.Mods
                     UnityEngine.Color thecolor = vrrig.playerColor;
                     if (vrrig.concatStringOfCosmeticsAllowed.Contains("LBADE") || vrrig.concatStringOfCosmeticsAllowed.Contains("LBAGS"))
                     {
-                        thecolor = Color.magenta;
+                        thecolor = Color.green;
                         showtracersplz = true;
                     }
                     if (vrrig.concatStringOfCosmeticsAllowed.Contains("LBACP"))
@@ -909,7 +909,7 @@ namespace VapeMenu.Mods
                 if (vrrig != GorillaTagger.Instance.offlineVRRig)
                 {
                     GameObject line = new GameObject("Line");
-                    //if (GetIndex("Hidden on Camera").enabled) { line.layer = 19; }
+                    if (GetIndex("Hidden on Camera").enabled) { line.layer = 19; }
                     LineRenderer liner = line.AddComponent<LineRenderer>();
                     UnityEngine.Color thecolor = vrrig.playerColor;
                     if (GetIndex("Follow Menu Theme").enabled) { thecolor = GetBGColor(0f); }

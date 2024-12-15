@@ -599,13 +599,13 @@ namespace VapeMenu.Mods
                 return;
 
             switch (themeType) {
-                case 1: // Default (PURPLE)
-                    bgColorA = new Color32(144, 0, 255, 128);
-                    bgColorB = new Color32(144, 0, 255, 128);
+                case 1: // Purple
+                    bgColorA = new Color32(128, 0, 255, 128);
+                    bgColorB = new Color32(128, 0, 255, 128);
                     buttonDefaultA = new Color32(0, 0, 0, 255);
                     buttonDefaultB = new Color32(0, 0, 0, 255);
-                    buttonClickedA = new Color32(144, 0, 255, 128);
-                    buttonClickedB = new Color32(144, 0, 255, 128);
+                    buttonClickedA = new Color32(128, 0, 255, 128);
+                    buttonClickedB = new Color32(128, 0, 255, 128);
                     titleColor = new Color32(255, 255, 255, 255);
                     textColor = new Color32(255, 255, 255, 255);
                     textClicked = new Color32(255, 255, 255, 255);
@@ -810,15 +810,15 @@ namespace VapeMenu.Mods
                     textColor = Color.yellow;
                     textClicked = Color.black;
                     break;
-                case 20: // purple Fade
-                    bgColorA = Color.   magenta;
+                case 20: // Green Fade
+                    bgColorA = Color.green;
                     bgColorB = Color.black;
                     buttonDefaultA = Color.black;
                     buttonDefaultB = Color.black;
-                    buttonClickedA = Color.magenta;
-                    buttonClickedB = Color.magenta;
-                    titleColor = Color.magenta;
-                    textColor = Color.magenta;
+                    buttonClickedA = Color.green;
+                    buttonClickedB = Color.green;
+                    titleColor = Color.green;
+                    textColor = Color.green;
                     textClicked = Color.black;
                     break;
                 case 21: // Blue Fade
@@ -867,7 +867,7 @@ namespace VapeMenu.Mods
                     break;
                 case 25: // Pride
                     bgColorA = Color.red;
-                    bgColorB = Color.magenta;
+                    bgColorB = Color.green;
                     buttonDefaultA = Color.black;
                     buttonDefaultB = Color.black;
                     buttonClickedA = Color.white;
@@ -918,18 +918,18 @@ namespace VapeMenu.Mods
                     buttonClickedB = Color.black;
                     titleColor = Color.white;
                     textColor = Color.white;
-                    textClicked = Color.magenta;
+                    textClicked = Color.green;
                     break;
                 case 30: // Transparent
                     bgColorA = Color.black;
                     bgColorB = Color.black;
                     buttonDefaultA = Color.white;
                     buttonDefaultB = Color.white;
-                    buttonClickedA = Color.magenta;
-                    buttonClickedB = Color. magenta;
+                    buttonClickedA = Color.green;
+                    buttonClickedB = Color.green;
                     titleColor = Color.white;
                     textColor = Color.white;
-                    textClicked = Color.magenta;
+                    textClicked = Color.green;
                     break;
                 case 31: // King
                     bgColorA = new Color32(100, 60, 170, 255);
@@ -1017,7 +1017,7 @@ namespace VapeMenu.Mods
                     buttonClickedB = new Color32(83, 116, 92, 255);
                     titleColor = Color.white;
                     textColor = Color.white;
-                    textClicked = Color.magenta;
+                    textClicked = Color.green;
                     break;
                 case 39: // Steal (new)
                     bgColorA = new Color32(27, 27, 27, 255);
@@ -1035,8 +1035,8 @@ namespace VapeMenu.Mods
                     bgColorB = new Color32(100, 25, 125, 255);
                     buttonDefaultA = new Color32(25, 25, 25, 255);
                     buttonDefaultB = new Color32(25, 25, 25, 255);
-                    buttonClickedA = Color.magenta;
-                    buttonClickedB = Color.magenta;
+                    buttonClickedA = Color.green;
+                    buttonClickedB = Color.green;
                     titleColor = Color.white;
                     textColor = Color.white;
                     textClicked = Color.white;
@@ -1046,8 +1046,8 @@ namespace VapeMenu.Mods
                     bgColorB = new Color32(27, 27, 27, 255);
                     buttonDefaultA = Color.red;
                     buttonDefaultB = Color.red;
-                    buttonClickedA = Color.magenta;
-                    buttonClickedB = Color.magenta;
+                    buttonClickedA = Color.green;
+                    buttonClickedB = Color.green;
                     titleColor = Color.white;
                     textColor = Color.white;
                     textClicked = Color.white;
@@ -1315,7 +1315,7 @@ namespace VapeMenu.Mods
             }
             UpdateWriteCustomTheme();
         }
-        public static void CMTIncreasepurple()
+        public static void CMTIncreaseGreen()
         {
             int g = 0;
             switch (modifyWhatId)
@@ -1329,7 +1329,7 @@ namespace VapeMenu.Mods
                     if (GetIndex("Custom Menu Theme").enabled)
                         bgColorA = new Color(bgColorA.r, g / 10f, bgColorA.b);
 
-                    GetIndex("purple").overlapText = "purple <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
+                    GetIndex("Green").overlapText = "Green <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
                     GetIndex("PreviewLabel").overlapText = "<color=#" + ColorToHex(bgColorA) + ">Preview</color>";
                     break;
                 case 1:
@@ -1341,7 +1341,7 @@ namespace VapeMenu.Mods
                     if (GetIndex("Custom Menu Theme").enabled)
                         bgColorB = new Color(bgColorB.r, g / 10f, bgColorB.b);
 
-                    GetIndex("purple").overlapText = "purple <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
+                    GetIndex("Green").overlapText = "Green <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
                     GetIndex("PreviewLabel").overlapText = "<color=#" + ColorToHex(bgColorB) + ">Preview</color>";
                     break;
                 case 2:
@@ -1353,7 +1353,7 @@ namespace VapeMenu.Mods
                     if (GetIndex("Custom Menu Theme").enabled)
                         buttonDefaultA = new Color(buttonDefaultA.r, g / 10f, buttonDefaultA.b);
 
-                    GetIndex("purple").overlapText = "purple <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
+                    GetIndex("Green").overlapText = "Green <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
                     GetIndex("PreviewLabel").overlapText = "<color=#" + ColorToHex(buttonDefaultA) + ">Preview</color>";
                     break;
                 case 3:
@@ -1365,7 +1365,7 @@ namespace VapeMenu.Mods
                     if (GetIndex("Custom Menu Theme").enabled)
                         buttonDefaultB = new Color(buttonDefaultB.r, g / 10f, buttonDefaultB.b);
 
-                    GetIndex("purple").overlapText = "purple <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
+                    GetIndex("Green").overlapText = "Green <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
                     GetIndex("PreviewLabel").overlapText = "<color=#" + ColorToHex(buttonDefaultB) + ">Preview</color>";
                     break;
                 case 4:
@@ -1377,7 +1377,7 @@ namespace VapeMenu.Mods
                     if (GetIndex("Custom Menu Theme").enabled)
                         buttonClickedA = new Color(buttonClickedA.r, g / 10f, buttonClickedA.b);
 
-                    GetIndex("purple").overlapText = "purple <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
+                    GetIndex("Green").overlapText = "Green <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
                     GetIndex("PreviewLabel").overlapText = "<color=#" + ColorToHex(buttonClickedA) + ">Preview</color>";
                     break;
                 case 5:
@@ -1389,7 +1389,7 @@ namespace VapeMenu.Mods
                     if (GetIndex("Custom Menu Theme").enabled)
                         buttonClickedB = new Color(buttonClickedB.r, g / 10f, buttonClickedB.b);
 
-                    GetIndex("purple").overlapText = "purple <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
+                    GetIndex("Green").overlapText = "Green <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
                     GetIndex("PreviewLabel").overlapText = "<color=#" + ColorToHex(buttonClickedB) + ">Preview</color>";
                     break;
                 case 6:
@@ -1401,7 +1401,7 @@ namespace VapeMenu.Mods
                     if (GetIndex("Custom Menu Theme").enabled)
                         titleColor = new Color(titleColor.r, g / 10f, titleColor.b);
 
-                    GetIndex("purple").overlapText = "purple <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
+                    GetIndex("Green").overlapText = "Green <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
                     GetIndex("PreviewLabel").overlapText = "<color=#" + ColorToHex(titleColor) + ">Preview</color>";
                     break;
                 case 7:
@@ -1413,7 +1413,7 @@ namespace VapeMenu.Mods
                     if (GetIndex("Custom Menu Theme").enabled)
                         textColor = new Color(textColor.r, g / 10f, textColor.b);
 
-                    GetIndex("purple").overlapText = "purple <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
+                    GetIndex("Green").overlapText = "Green <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
                     GetIndex("PreviewLabel").overlapText = "<color=#" + ColorToHex(textColor) + ">Preview</color>";
                     break;
                 case 8:
@@ -1425,7 +1425,7 @@ namespace VapeMenu.Mods
                     if (GetIndex("Custom Menu Theme").enabled)
                         textClicked = new Color(textClicked.r, g / 10f, textClicked.b);
 
-                    GetIndex("purple").overlapText = "purple <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
+                    GetIndex("Green").overlapText = "Green <color=grey>[</color><color=purple>" + g.ToString() + "</color><color=grey>]</color>";
                     GetIndex("PreviewLabel").overlapText = "<color=#" + ColorToHex(textClicked) + ">Preview</color>";
                     break;
             }
@@ -1605,7 +1605,7 @@ namespace VapeMenu.Mods
             List<ButtonInfo> literallybuttons = new List<ButtonInfo> {
                 new ButtonInfo { buttonText = "Exit First Color", method = () => CMTBackground(), isTogglable = false, toolTip = "Returns you back to the background menu." },
                 new ButtonInfo { buttonText = "Red", overlapText = "Red <color=grey>[</color><color=purple>" + ((int)Math.Round(bgColorA.r * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseRed(), isTogglable = false, toolTip = "Change the red of the first color of the background." },
-                new ButtonInfo { buttonText = "purple", overlapText = "purple <color=grey>[</color><color=purple>" + ((int)Math.Round(bgColorA.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreasepurple(), isTogglable = false, toolTip = "Change the purple of the first color of the background." },
+                new ButtonInfo { buttonText = "Green", overlapText = "Green <color=grey>[</color><color=purple>" + ((int)Math.Round(bgColorA.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseGreen(), isTogglable = false, toolTip = "Change the green of the first color of the background." },
                 new ButtonInfo { buttonText = "Blue", overlapText = "Blue <color=grey>[</color><color=purple>" + ((int)Math.Round(bgColorA.b * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseBlue(), isTogglable = false, toolTip = "Change the blue of the first color of the background." },
                 new ButtonInfo { buttonText = "PreviewLabel", overlapText = "<color=#" + ColorToHex(bgColorA) + ">Preview</color>", label = true },
             };
@@ -1621,7 +1621,7 @@ namespace VapeMenu.Mods
             List<ButtonInfo> literallybuttons = new List<ButtonInfo> {
                 new ButtonInfo { buttonText = "Exit Second Color", method = () => CMTBackground(), isTogglable = false, toolTip = "Returns you back to the background menu." },
                 new ButtonInfo { buttonText = "Red", overlapText = "Red <color=grey>[</color><color=purple>" + ((int)Math.Round(bgColorB.r * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseRed(), isTogglable = false, toolTip = "Change the red of the second color of the background." },
-                new ButtonInfo { buttonText = "purple", overlapText = "purple <color=grey>[</color><color=purple>" + ((int)Math.Round(bgColorB.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreasepurple(), isTogglable = false, toolTip = "Change the purple of the second color of the background." },
+                new ButtonInfo { buttonText = "Green", overlapText = "Green <color=grey>[</color><color=purple>" + ((int)Math.Round(bgColorB.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseGreen(), isTogglable = false, toolTip = "Change the green of the second color of the background." },
                 new ButtonInfo { buttonText = "Blue", overlapText = "Blue <color=grey>[</color><color=purple>" + ((int)Math.Round(bgColorB.b * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseBlue(), isTogglable = false, toolTip = "Change the blue of the second color of the background." },
                 new ButtonInfo { buttonText = "PreviewLabel", overlapText = "<color=#" + ColorToHex(bgColorB) + ">Preview</color>", label = true },
             };
@@ -1677,7 +1677,7 @@ namespace VapeMenu.Mods
             List<ButtonInfo> literallybuttons = new List<ButtonInfo> {
                 new ButtonInfo { buttonText = "Exit First Color", method = () => CMTButtonEnabled(), isTogglable = false, toolTip = "Returns you back to the enabled button menu." },
                 new ButtonInfo { buttonText = "Red", overlapText = "Red <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonClickedA.r * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseRed(), isTogglable = false, toolTip = "Change the red of the first color of the enabled button color." },
-                new ButtonInfo { buttonText = "purple", overlapText = "purple <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonClickedA.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreasepurple(), isTogglable = false, toolTip = "Change the purple of the first color of the enabled button color." },
+                new ButtonInfo { buttonText = "Green", overlapText = "Green <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonClickedA.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseGreen(), isTogglable = false, toolTip = "Change the green of the first color of the enabled button color." },
                 new ButtonInfo { buttonText = "Blue", overlapText = "Blue <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonClickedA.b * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseBlue(), isTogglable = false, toolTip = "Change the blue of the first color of the enabled button color." },
                 new ButtonInfo { buttonText = "PreviewLabel", overlapText = "<color=#" + ColorToHex(buttonClickedA) + ">Preview</color>", label = true },
             };
@@ -1693,7 +1693,7 @@ namespace VapeMenu.Mods
             List<ButtonInfo> literallybuttons = new List<ButtonInfo> {
                 new ButtonInfo { buttonText = "Exit Second Color", method = () => CMTButtonEnabled(), isTogglable = false, toolTip = "Returns you back to the enabled button menu." },
                 new ButtonInfo { buttonText = "Red", overlapText = "Red <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonClickedB.r * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseRed(), isTogglable = false, toolTip = "Change the red of the first color of the enabled button color." },
-                new ButtonInfo { buttonText = "purple", overlapText = "purple <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonClickedB.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreasepurple(), isTogglable = false, toolTip = "Change the purple of the first color of the enabled button color." },
+                new ButtonInfo { buttonText = "Green", overlapText = "Green <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonClickedB.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseGreen(), isTogglable = false, toolTip = "Change the green of the first color of the enabled button color." },
                 new ButtonInfo { buttonText = "Blue", overlapText = "Blue <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonClickedB.b * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseBlue(), isTogglable = false, toolTip = "Change the blue of the first color of the enabled button color." },
                 new ButtonInfo { buttonText = "PreviewLabel", overlapText = "<color=#" + ColorToHex(buttonClickedB) + ">Preview</color>", label = true },
             };
@@ -1709,7 +1709,7 @@ namespace VapeMenu.Mods
             List<ButtonInfo> literallybuttons = new List<ButtonInfo> {
                 new ButtonInfo { buttonText = "Exit First Color", method = () => CMTButtonDisabled(), isTogglable = false, toolTip = "Returns you back to the disabled button menu." },
                 new ButtonInfo { buttonText = "Red", overlapText = "Red <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonDefaultA.r * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseRed(), isTogglable = false, toolTip = "Change the red of the first color of the disabled button color." },
-                new ButtonInfo { buttonText = "purple", overlapText = "purple <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonDefaultA.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreasepurple(), isTogglable = false, toolTip = "Change the purple of the first color of the disabled button color." },
+                new ButtonInfo { buttonText = "Green", overlapText = "Green <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonDefaultA.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseGreen(), isTogglable = false, toolTip = "Change the green of the first color of the disabled button color." },
                 new ButtonInfo { buttonText = "Blue", overlapText = "Blue <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonDefaultA.b * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseBlue(), isTogglable = false, toolTip = "Change the blue of the first color of the disabled button color." },
                 new ButtonInfo { buttonText = "PreviewLabel", overlapText = "<color=#" + ColorToHex(buttonDefaultA) + ">Preview</color>", label = true },
             };
@@ -1725,7 +1725,7 @@ namespace VapeMenu.Mods
             List<ButtonInfo> literallybuttons = new List<ButtonInfo> {
                 new ButtonInfo { buttonText = "Exit Second Color", method = () => CMTButtonDisabled(), isTogglable = false, toolTip = "Returns you back to the disabled button menu." },
                 new ButtonInfo { buttonText = "Red", overlapText = "Red <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonDefaultB.r * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseRed(), isTogglable = false, toolTip = "Change the red of the first color of the disabled button color." },
-                new ButtonInfo { buttonText = "purple", overlapText = "purple <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonDefaultB.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreasepurple(), isTogglable = false, toolTip = "Change the purple of the first color of the disabled button color." },
+                new ButtonInfo { buttonText = "Green", overlapText = "Green <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonDefaultB.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseGreen(), isTogglable = false, toolTip = "Change the green of the first color of the disabled button color." },
                 new ButtonInfo { buttonText = "Blue", overlapText = "Blue <color=grey>[</color><color=purple>" + ((int)Math.Round(buttonDefaultB.b * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseBlue(), isTogglable = false, toolTip = "Change the blue of the first color of the disabled button color." },
                 new ButtonInfo { buttonText = "PreviewLabel", overlapText = "<color=#" + ColorToHex(buttonDefaultB) + ">Preview</color>", label = true },
             };
@@ -1756,7 +1756,7 @@ namespace VapeMenu.Mods
             List<ButtonInfo> literallybuttons = new List<ButtonInfo> {
                 new ButtonInfo { buttonText = "Exit Title", method = () => CMTText(), isTogglable = false, toolTip = "Returns you back to the text menu." },
                 new ButtonInfo { buttonText = "Red", overlapText = "Red <color=grey>[</color><color=purple>" + ((int)Math.Round(titleColor.r * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseRed(), isTogglable = false, toolTip = "Change the red of the title color." },
-                new ButtonInfo { buttonText = "purple", overlapText = "purple <color=grey>[</color><color=purple>" + ((int)Math.Round(titleColor.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreasepurple(), isTogglable = false, toolTip = "Change the purple of the title color." },
+                new ButtonInfo { buttonText = "Green", overlapText = "Green <color=grey>[</color><color=purple>" + ((int)Math.Round(titleColor.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseGreen(), isTogglable = false, toolTip = "Change the green of the title color." },
                 new ButtonInfo { buttonText = "Blue", overlapText = "Blue <color=grey>[</color><color=purple>" + ((int)Math.Round(titleColor.b * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseBlue(), isTogglable = false, toolTip = "Change the blue of the title color." },
                 new ButtonInfo { buttonText = "PreviewLabel", overlapText = "<color=#" + ColorToHex(titleColor) + ">Preview</color>", label = true },
             };
@@ -1772,7 +1772,7 @@ namespace VapeMenu.Mods
             List<ButtonInfo> literallybuttons = new List<ButtonInfo> {
                 new ButtonInfo { buttonText = "Exit Second Color", method = () => CMTText(), isTogglable = false, toolTip = "Returns you back to the text menu." },
                 new ButtonInfo { buttonText = "Red", overlapText = "Red <color=grey>[</color><color=purple>" + ((int)Math.Round(textClicked.r * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseRed(), isTogglable = false, toolTip = "Change the red of the enabled text color." },
-                new ButtonInfo { buttonText = "purple", overlapText = "purple <color=grey>[</color><color=purple>" + ((int)Math.Round(textClicked.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreasepurple(), isTogglable = false, toolTip = "Change the purple of the enabled text color." },
+                new ButtonInfo { buttonText = "Green", overlapText = "Green <color=grey>[</color><color=purple>" + ((int)Math.Round(textClicked.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseGreen(), isTogglable = false, toolTip = "Change the green of the enabled text color." },
                 new ButtonInfo { buttonText = "Blue", overlapText = "Blue <color=grey>[</color><color=purple>" + ((int)Math.Round(textClicked.b * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseBlue(), isTogglable = false, toolTip = "Change the blue of the enabled text color." },
                 new ButtonInfo { buttonText = "PreviewLabel", overlapText = "<color=#" + ColorToHex(textClicked) + ">Preview</color>", label = true },
             };
@@ -1788,7 +1788,7 @@ namespace VapeMenu.Mods
             List<ButtonInfo> literallybuttons = new List<ButtonInfo> {
                 new ButtonInfo { buttonText = "Exit Second Color", method = () => CMTText(), isTogglable = false, toolTip = "Returns you back to the text menu." },
                 new ButtonInfo { buttonText = "Red", overlapText = "Red <color=grey>[</color><color=purple>" + ((int)Math.Round(textColor.r * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseRed(), isTogglable = false, toolTip = "Change the red of the disabled text color." },
-                new ButtonInfo { buttonText = "purple", overlapText = "purple <color=grey>[</color><color=purple>" + ((int)Math.Round(textColor.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreasepurple(), isTogglable = false, toolTip = "Change the purple of the disabled text color." },
+                new ButtonInfo { buttonText = "Green", overlapText = "Green <color=grey>[</color><color=purple>" + ((int)Math.Round(textColor.g * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseGreen(), isTogglable = false, toolTip = "Change the green of the disabled text color." },
                 new ButtonInfo { buttonText = "Blue", overlapText = "Blue <color=grey>[</color><color=purple>" + ((int)Math.Round(textColor.b * 10f)).ToString() + "</color><color=grey>]</color>", method = () => CMTIncreaseBlue(), isTogglable = false, toolTip = "Change the blue of the disabled text color." },
                 new ButtonInfo { buttonText = "PreviewLabel", overlapText = "<color=#" + ColorToHex(textColor) + ">Preview</color>", label = true },
             };
@@ -1984,7 +1984,7 @@ namespace VapeMenu.Mods
                 "Red",
                 "Orange",
                 "Yellow",
-                "purple",
+                "Green",
                 "Blue",
                 "Cyan",
                 "Purple",
@@ -1999,7 +1999,7 @@ namespace VapeMenu.Mods
                 "red",
                 "#ff8000",
                 "yellow",
-                "purple",
+                "green",
                 "blue",
                 "cyan",
                 "#7700ff",
@@ -2356,13 +2356,23 @@ namespace VapeMenu.Mods
             dynamicAnimations = false;
         }
 
+        public static void DynamicGradients()
+        {
+            dynamicGradients = true;
+        }
+
+        public static void NoDynamicGradients()
+        {
+            dynamicGradients = false;
+        }
+
         // Thanks to https://github.com/kingofnetflix/BAnANA for inspiration and support with voice recognition
         // No, it's not skidded, read the debunk: https://pastebin.com/raw/dj55QNyC
         private static KeywordRecognizer mainPhrases;
         private static KeywordRecognizer modPhrases;
         public static void VoiceRecognitionOn()
         {
-            mainPhrases = new KeywordRecognizer(new string[] { "jarvis", "ii", "i i", "eye eye", "siri", "google", "alexa", "dummy", "computer", "stinky", "silly", "stupid", "console" });
+            mainPhrases = new KeywordRecognizer(new string[] { "jarvis", "ii", "i i", "eye eye", "siri", "google", "alexa", "dummy", "computer", "stinky", "silly", "stupid", "console", "go go gadget" });
             mainPhrases.OnPhraseRecognized += ModRecognition;
             mainPhrases.Start();
         }
@@ -2439,7 +2449,7 @@ namespace VapeMenu.Mods
             if (modTarget != null)
             {
                 ButtonInfo mod = GetIndex(modTarget);
-                NotifiLib.SendNotification("<color=grey>[</color><color=" + (mod.enabled ? "red" : "purple") + "> VOICE</color><color=grey>]</color> " + (mod.enabled ? "Disabling " : "Enabling ") + (mod.overlapText == null ? mod.buttonText : mod.overlapText)+"...", 3000);
+                NotifiLib.SendNotification("<color=grey>[</color><color=" + (mod.enabled ? "red" : "green") + "> VOICE</color><color=grey>]</color> " + (mod.enabled ? "Disabling " : "Enabling ") + (mod.overlapText == null ? mod.buttonText : mod.overlapText)+"...", 3000);
                 if (dynamicSounds)
                 {
                     Play2DAudio(LoadSoundFromURL("https://github.com/iiDk-the-actual/ModInfo/raw/main/confirm.wav", "confirm.wav"), buttonClickVolume / 10f);

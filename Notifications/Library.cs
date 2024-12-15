@@ -118,7 +118,7 @@ namespace VapeMenu.Notifications
                                     {
                                         buttonText = TranslateText(buttonText);
                                     }
-                                    if (inputTextColor != "purple")
+                                    if (inputTextColor != "green")
                                     {
                                         buttonText = buttonText.Replace(" <color=grey>[</color><color=purple>", " <color=grey>[</color><color=" + inputTextColor + ">");
                                     }
@@ -178,7 +178,7 @@ namespace VapeMenu.Notifications
                         {
                             NotificationText = TranslateText(NotificationText);
                         }
-                        if (inputTextColor != "purple")
+                        if (inputTextColor != "green")
                         {
                             NotificationText = NotificationText.Replace("<color=purple>", "<color=" + inputTextColor + ">");
                         }

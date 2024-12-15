@@ -1,7 +1,7 @@
 using BepInEx;
 using System.Reflection;
 
-[assembly: AssemblyCompany("vapezyy")]
+[assembly: AssemblyCompany("goldentrophy")]
 [assembly: AssemblyConfiguration("Debug")]
 [assembly: AssemblyFileVersion(VapeMenu.PluginInfo.Version + ".0")]
 [assembly: AssemblyInformationalVersion(VapeMenu.PluginInfo.Version)]

@@ -15,11 +15,7 @@ namespace VapeMenu.Patches
             {
                 if (nameSpoofEnabled)
                 {
-                    try
-                    {
-                        VapeMenu.Mods.Safety.SpoofName();
-                    }
-                    catch { }
+                    return false;
                 }
                 if (patchEnabled)
                 {

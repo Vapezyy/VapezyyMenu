@@ -454,6 +454,7 @@ namespace VapeMenu.Mods
                 Color.white,
                 Color.magenta,
                 Color.yellow,
+                Color.green,
                 new Color(1f, 0.5f, 1f, 255f),
                 new Color(0f, 0.5f, 0f, 255f),
                 new Color32(113, 0, 198, 255),

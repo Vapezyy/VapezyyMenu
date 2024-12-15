@@ -16,9 +16,9 @@ namespace VapeMenu.UI
 {
     public class Main : MonoBehaviour
     {
-        private string inputText = "vapezyy";
+        private string inputText = "Vapezyy";
 
-        private string r = "108";
+        private string r = "128";
 
         private string g = "0";
 
@@ -116,6 +116,7 @@ namespace VapeMenu.UI
                 }
                 catch { }
 
+       
                 GUI.Box(new Rect(Screen.width - 250, 10, 240, 120), "", GUI.skin.box);
 
                 inputText = GUI.TextField(new Rect(Screen.width - 200, 20, 180, 20), inputText);
@@ -195,7 +196,7 @@ namespace VapeMenu.UI
                                     {
                                         toadd = TranslateText(toadd);
                                     }
-                                    if (inputTextColor != "purple")
+                                    if (inputTextColor != "green")
                                     {
                                         toadd = toadd.Replace(" <color=grey>[</color><color=purple>", " <color=grey>[</color><color=" + inputTextColor + ">");
                                     }

@@ -920,10 +920,10 @@ namespace VapeMenu.Mods
             }
             else
             {
-                AngryBeeSwarm vapezyy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
-                vapezyy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
-                Vector3 vapezyyy = new Vector3(99999f, 99999f, 99999f);
-                vapezyy.Emerge(vapezyyy, new Vector3(999f, 999f, 999f));
+                AngryBeeSwarm goldentrophy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
+                goldentrophy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
+                Vector3 goldentrophyy = new Vector3(99999f, 99999f, 99999f);
+                goldentrophy.Emerge(goldentrophyy, new Vector3(999f, 999f, 999f));
             }
         }
 
@@ -938,10 +938,10 @@ namespace VapeMenu.Mods
             }
             else
             {
-                AngryBeeSwarm vapezyy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
-                vapezyy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
-                Vector3 vapezyyy = GorillaTagger.Instance.headCollider.transform.position + new Vector3(0f, 3f, 0f);
-                vapezyy.Emerge(vapezyyy, vapezyyy);
+                AngryBeeSwarm goldentrophy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
+                goldentrophy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
+                Vector3 goldentrophyy = GorillaTagger.Instance.headCollider.transform.position + new Vector3(0f, 3f, 0f);
+                goldentrophy.Emerge(goldentrophyy, goldentrophyy);
             }
         }
 
@@ -964,10 +964,10 @@ namespace VapeMenu.Mods
                     }
                     else
                     {
-                        AngryBeeSwarm vapezyy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
-                        vapezyy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
-                        Vector3 vapezyyy = Ray.point;
-                        vapezyy.Emerge(vapezyyy, vapezyyy);
+                        AngryBeeSwarm goldentrophy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
+                        goldentrophy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
+                        Vector3 goldentrophyy = Ray.point;
+                        goldentrophy.Emerge(goldentrophyy, goldentrophyy);
                     }
                 }
             }
@@ -988,10 +988,10 @@ namespace VapeMenu.Mods
                 if (Time.time > beedelay)
                 {
                     beedelay = Time.time + 0.1f;
-                    AngryBeeSwarm vapezyy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
-                    vapezyy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
-                    Vector3 vapezyyy = GetRandomVRRig(true).headConstraint.transform.position;
-                    vapezyy.Emerge(vapezyyy, vapezyyy);
+                    AngryBeeSwarm goldentrophy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
+                    goldentrophy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
+                    Vector3 goldentrophyy = GetRandomVRRig(true).headConstraint.transform.position;
+                    goldentrophy.Emerge(goldentrophyy, goldentrophyy);
                 }
             }
         }
@@ -1007,20 +1007,20 @@ namespace VapeMenu.Mods
             }
             else
             {
-                AngryBeeSwarm vapezyy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
-                vapezyy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
+                AngryBeeSwarm goldentrophy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
+                goldentrophy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
 
-                System.Type vapezyyy = vapezyy.GetType();
-                FieldInfo vapezyyyy = vapezyyy.GetField("grabTimestamp", BindingFlags.NonPublic | BindingFlags.Instance);
-                vapezyyyy.SetValue(vapezyy, Time.time);
-                vapezyyyy = vapezyyy.GetField("emergeStartedTimestamp", BindingFlags.NonPublic | BindingFlags.Instance);
-                vapezyyyy.SetValue(vapezyy, Time.time);
+                System.Type goldentrophyy = goldentrophy.GetType();
+                FieldInfo goldentrophyyy = goldentrophyy.GetField("grabTimestamp", BindingFlags.NonPublic | BindingFlags.Instance);
+                goldentrophyyy.SetValue(goldentrophy, Time.time);
+                goldentrophyyy = goldentrophyy.GetField("emergeStartedTimestamp", BindingFlags.NonPublic | BindingFlags.Instance);
+                goldentrophyyy.SetValue(goldentrophy, Time.time);
 
-                vapezyy.targetPlayer = PhotonNetwork.LocalPlayer;
-                vapezyy.grabbedPlayer = PhotonNetwork.LocalPlayer;
+                goldentrophy.targetPlayer = PhotonNetwork.LocalPlayer;
+                goldentrophy.grabbedPlayer = PhotonNetwork.LocalPlayer;
 
-                vapezyy.lastState = AngryBeeSwarm.ChaseState.Chasing;
-                vapezyy.currentState = AngryBeeSwarm.ChaseState.Grabbing;
+                goldentrophy.lastState = AngryBeeSwarm.ChaseState.Chasing;
+                goldentrophy.currentState = AngryBeeSwarm.ChaseState.Grabbing;
             }
         }
 
@@ -1047,19 +1047,19 @@ namespace VapeMenu.Mods
                         }
                         else
                         {
-                            AngryBeeSwarm vapezyy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
-                            vapezyy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
+                            AngryBeeSwarm goldentrophy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
+                            goldentrophy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
 
-                            System.Type vapezyyy = vapezyy.GetType();
-                            FieldInfo vapezyyyy = vapezyyy.GetField("grabTimestamp", BindingFlags.NonPublic | BindingFlags.Instance);
-                            vapezyyyy.SetValue(vapezyy, Time.time);
-                            vapezyyyy = vapezyyy.GetField("emergeStartedTimestamp", BindingFlags.NonPublic | BindingFlags.Instance);
-                            vapezyyyy.SetValue(vapezyy, Time.time);
+                            System.Type goldentrophyy = goldentrophy.GetType();
+                            FieldInfo goldentrophyyy = goldentrophyy.GetField("grabTimestamp", BindingFlags.NonPublic | BindingFlags.Instance);
+                            goldentrophyyy.SetValue(goldentrophy, Time.time);
+                            goldentrophyyy = goldentrophyy.GetField("emergeStartedTimestamp", BindingFlags.NonPublic | BindingFlags.Instance);
+                            goldentrophyyy.SetValue(goldentrophy, Time.time);
 
-                            vapezyy.targetPlayer = player;
-                            vapezyy.grabbedPlayer = player;
+                            goldentrophy.targetPlayer = player;
+                            goldentrophy.grabbedPlayer = player;
 
-                            vapezyy.currentState = AngryBeeSwarm.ChaseState.Grabbing;
+                            goldentrophy.currentState = AngryBeeSwarm.ChaseState.Grabbing;
                         }
                     }
                 }
@@ -1081,19 +1081,19 @@ namespace VapeMenu.Mods
                 {
                     beedelay = Time.time + 0.1f;
                     Photon.Realtime.Player player = GetRandomPlayer(true);
-                    AngryBeeSwarm vapezyy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
-                    vapezyy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
+                    AngryBeeSwarm goldentrophy = GameObject.Find("Environment Objects/PersistentObjects_Prefab/Nowruz2024_PersistentObjects/AngryBeeSwarm/FloatingChaseBeeSwarm").GetComponent<AngryBeeSwarm>();
+                    goldentrophy.photonView.OwnerActorNr = PhotonNetwork.LocalPlayer.ActorNumber;
 
-                    System.Type vapezyyy = vapezyy.GetType();
-                    FieldInfo vapezyyyy = vapezyyy.GetField("grabTimestamp", BindingFlags.NonPublic | BindingFlags.Instance);
-                    vapezyyyy.SetValue(vapezyy, Time.time);
-                    vapezyyyy = vapezyyy.GetField("emergeStartedTimestamp", BindingFlags.NonPublic | BindingFlags.Instance);
-                    vapezyyyy.SetValue(vapezyy, Time.time);
+                    System.Type goldentrophyy = goldentrophy.GetType();
+                    FieldInfo goldentrophyyy = goldentrophyy.GetField("grabTimestamp", BindingFlags.NonPublic | BindingFlags.Instance);
+                    goldentrophyyy.SetValue(goldentrophy, Time.time);
+                    goldentrophyyy = goldentrophyy.GetField("emergeStartedTimestamp", BindingFlags.NonPublic | BindingFlags.Instance);
+                    goldentrophyyy.SetValue(goldentrophy, Time.time);
 
-                    vapezyy.targetPlayer = player;
-                    vapezyy.grabbedPlayer = player;
+                    goldentrophy.targetPlayer = player;
+                    goldentrophy.grabbedPlayer = player;
 
-                    vapezyy.currentState = AngryBeeSwarm.ChaseState.Grabbing;
+                    goldentrophy.currentState = AngryBeeSwarm.ChaseState.Grabbing;
                 }
             }
         }
@@ -1564,6 +1564,18 @@ namespace VapeMenu.Mods
                 if (piece.gameObject.activeSelf)
                     BuilderTable.instance.RequestRecyclePiece(piece, true, 2);
             }
+        }
+
+        public static void UnlimitedBuilding()
+        {
+            BuilderPieceInteractor.instance.maxHoldablePieceStackCount = int.MaxValue;
+            Patches.UnlimitPatches.enabled = true;
+        }
+
+        public static void DisableUnlimitedBuilding()
+        {
+            BuilderPieceInteractor.instance.maxHoldablePieceStackCount = 50;
+            Patches.UnlimitPatches.enabled = false;
         }
 
         private static float dumbdelay = 0f;
@@ -2754,7 +2766,7 @@ namespace VapeMenu.Mods
                 Color[] colors = new Color[]
                 {
                     Color.red,
-                    Color.magenta,
+                    Color.green,
                     Color.blue,
                     Color.magenta
                 };
@@ -2763,10 +2775,10 @@ namespace VapeMenu.Mods
             }
         }
 
-        public static void SetVapezyy()
+        public static void BecomeVapezyy()
         {
-            ChangeName("vapezyy");
-            ChangeColor(new Color32(108, 0, 255, 255));
+            ChangeName("VAPEZYY");
+            ChangeColor(new Color32(128, 0, 255, 255));
         }
 
         public static void BecomePBBV()
@@ -2778,7 +2790,7 @@ namespace VapeMenu.Mods
         public static void BecomeJ3VU()
         {
             ChangeName("J3VU");
-            ChangeColor(Color.magenta);
+            ChangeColor(Color.green);
         }
 
         public static void BecomeECHO()
@@ -2806,7 +2818,7 @@ namespace VapeMenu.Mods
             Color[] colors = new Color[]
             {
                 Color.cyan,
-                Color.magenta,
+                Color.green,
                 Color.red,
                 Color.magenta
             };

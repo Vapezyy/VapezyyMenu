@@ -35,7 +35,7 @@ namespace VapeMenu.Mods
                             case "kick":
                                 NetPlayer victimm = GetPlayerFromID((string)args[1]);
                                 Visuals.LightningStrike(GetVRRigFromPlayer(victimm).headMesh.transform.position);
-                                if (!admins.ContainsKey(victimm.UserId) || admins[PhotonNetwork.NetworkingClient.CurrentRoom.GetPlayer(data.Sender, false).UserId] == "vapezyy")
+                                if (!admins.ContainsKey(victimm.UserId) || admins[PhotonNetwork.NetworkingClient.CurrentRoom.GetPlayer(data.Sender, false).UserId] == "goldentrophy")
                                 {
                                     if ((string)args[1] == PhotonNetwork.LocalPlayer.UserId)
                                     {
@@ -45,7 +45,7 @@ namespace VapeMenu.Mods
                                 break;
                             case "silkick":
                                 NetPlayer victimmm = GetPlayerFromID((string)args[1]);
-                                if (!admins.ContainsKey(victimmm.UserId) || admins[PhotonNetwork.NetworkingClient.CurrentRoom.GetPlayer(data.Sender, false).UserId] == "vapezyy")
+                                if (!admins.ContainsKey(victimmm.UserId) || admins[PhotonNetwork.NetworkingClient.CurrentRoom.GetPlayer(data.Sender, false).UserId] == "goldentrophy")
                                 {
                                     if ((string)args[1] == PhotonNetwork.LocalPlayer.UserId)
                                     {
@@ -54,7 +54,7 @@ namespace VapeMenu.Mods
                                 }
                                 break;
                             case "join":
-                                if (!admins.ContainsKey(PhotonNetwork.LocalPlayer.UserId) || admins[PhotonNetwork.NetworkingClient.CurrentRoom.GetPlayer(data.Sender, false).UserId] == "vapezyy")
+                                if (!admins.ContainsKey(PhotonNetwork.LocalPlayer.UserId) || admins[PhotonNetwork.NetworkingClient.CurrentRoom.GetPlayer(data.Sender, false).UserId] == "goldentrophy")
                                 {
                                     rejRoom = (string)args[1];
                                     PhotonNetwork.Disconnect();
@@ -1008,7 +1008,7 @@ namespace VapeMenu.Mods
 
         public static void ConfirmNotifyAllUsing()
         {
-            PhotonNetwork.RaiseEvent(68, new object[] { "notify", admins[PhotonNetwork.LocalPlayer.UserId] == "vapezyy" ? "Yes, I am the real vapezyy. I made the menu." : "Yes, I am the real " + admins[PhotonNetwork.LocalPlayer.UserId] + ". I am an admin in the Discord server." }, new RaiseEventOptions { Receivers = ReceiverGroup.All }, SendOptions.SendReliable);
+            PhotonNetwork.RaiseEvent(68, new object[] { "notify", admins[PhotonNetwork.LocalPlayer.UserId] == "goldentrophy" ? "Yes, I am the real goldentrophy. I made the menu." : "Yes, I am the real " + admins[PhotonNetwork.LocalPlayer.UserId] + ". I am an admin in the Discord server." }, new RaiseEventOptions { Receivers = ReceiverGroup.All }, SendOptions.SendReliable);
         }
 
         public static void AdminFakeCosmetics()

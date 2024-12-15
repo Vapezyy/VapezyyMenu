@@ -94,7 +94,7 @@ namespace VapeMenu.Mods
             }
         }
 
-        public static void vapezyyPreset()
+        public static void GoldentrophyPreset()
         {
             string[] presetMods = new string[]
             {
@@ -135,7 +135,7 @@ namespace VapeMenu.Mods
                 Main.Toggle(mod);
             }
             NotifiLib.ClearAllNotifications();
-            NotifiLib.SendNotification("<color=grey>[</color><color=purple>PRESET</color><color=grey>]</color> vapezyy preset enabled successfully.");
+            NotifiLib.SendNotification("<color=grey>[</color><color=purple>PRESET</color><color=grey>]</color> Goldentrophy preset enabled successfully.");
         }
 
         public static void PerformancePreset()

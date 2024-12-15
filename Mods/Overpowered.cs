@@ -9,6 +9,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using Photon.Voice.PUN;
 using System.Collections;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static VapeMenu.Classes.RigManager;
@@ -551,6 +552,7 @@ namespace VapeMenu.Mods
         }
 
         private static float delaything = 0f;
+
         // Hi skids :3
         // If you take this code you like giving sloppy wet kisses to cute boys >_<
         // I gotta stop
@@ -627,6 +629,7 @@ namespace VapeMenu.Mods
         }
 
         // Huge thanks to kingofnetflix
+        private static float flushDelay = 0f;
         public static void LagGun()
         {
             if (GetGunInput(false))
@@ -644,6 +647,11 @@ namespace VapeMenu.Mods
                         {
                             FriendshipGroupDetection.Instance.photonView.RPC("NotifyNoPartyToMerge", NetPlayerToPlayer(GetPlayerFromVRRig(whoCopy)), new object[] { null });
                         }
+                    }
+                    if (Time.time > flushDelay)
+                    {
+                        flushDelay = Time.time + 0.5f;
+                        RPCProtection();
                     }
                 }
                 if (GetGunInput(true))
@@ -679,6 +687,11 @@ namespace VapeMenu.Mods
                     {
                         FriendshipGroupDetection.Instance.photonView.RPC("NotifyNoPartyToMerge", RpcTarget.Others, new object[] { null });
                     }
+                }
+                if (Time.time > flushDelay)
+                {
+                    flushDelay = Time.time + 0.5f;
+                    RPCProtection();
                 }
             }
         }
@@ -734,8 +747,11 @@ namespace VapeMenu.Mods
                         isCopying = false;
                         whoCopy = null;
                         SetTick(1000f);
-                        NotifiLib.SendNotification("<color=grey>[</color><color=red>ERROR</color><color=grey>]</color> <color=white>You have been kicked for sending too many RPCs, you will reconnect shortly.</color>");
-                        rejRoom = ihavediahrrea;
+                        if (!GetIndex("Disable Kick Gun Reconnect").enabled)
+                        {
+                            NotifiLib.SendNotification("<color=grey>[</color><color=red>ERROR</color><color=grey>]</color> <color=white>You have been kicked for sending too many RPCs, you will reconnect shortly.</color>");
+                            rejRoom = ihavediahrrea;
+                        }
                         try { CoroutineManager.EndCoroutine(KVCoroutine); } catch { }
                     }
                     if (GetPlayerFromVRRig(whoCopy) == null)
@@ -743,8 +759,7 @@ namespace VapeMenu.Mods
                         isCopying = false;
                         whoCopy = null;
                         SetTick(1000f);
-                        NotifiLib.SendNotification("<color=grey>[</color><color=purple>KICK</color><color=grey>]</color> <color=white>Player has been kicked!</color>");
-                        rejRoom = ihavediahrrea;
+                        NotifiLib.SendNotification("<color=grey>[</color><color=purple>SUCCESS</color><color=grey>]</color> <color=white>Player has been kicked!</color>");
                         try { CoroutineManager.EndCoroutine(KVCoroutine); } catch { }
                     }
                 }
@@ -790,9 +805,9 @@ namespace VapeMenu.Mods
         public static void ForceUnloadCustomMap()
         {
             delaything = Time.time + 0.1f;
-            PhotonView vapezyy = GameObject.Find("Environment Objects/LocalObjects_Prefab/VirtualStump_CustomMapLobby/ModIOMapsTerminal/NetworkObject").GetComponent<PhotonView>();
+            PhotonView goldentrophy = GameObject.Find("Environment Objects/LocalObjects_Prefab/VirtualStump_CustomMapLobby/ModIOMapsTerminal/NetworkObject").GetComponent<PhotonView>();
 
-            vapezyy.RPC("UnloadMapRPC", RpcTarget.All, new object[] { });
+            goldentrophy.RPC("UnloadMapRPC", RpcTarget.All, new object[] { });
             RPCProtection();
         }
 
@@ -811,10 +826,10 @@ namespace VapeMenu.Mods
                     if (possibly && possibly != GorillaTagger.Instance.offlineVRRig)
                     {
                         delaything = Time.time + 0.1f;
-                        PhotonView vapezyy = GameObject.Find("Environment Objects/LocalObjects_Prefab/VirtualStump_CustomMapLobby/ModIOMapsTerminal/NetworkObject").GetComponent<PhotonView>();
+                        PhotonView goldentrophy = GameObject.Find("Environment Objects/LocalObjects_Prefab/VirtualStump_CustomMapLobby/ModIOMapsTerminal/NetworkObject").GetComponent<PhotonView>();
 
-                        vapezyy.RPC("SetRoomMapRPC", NetPlayerToPlayer(GetPlayerFromVRRig(possibly)), new object[] { UnityEngine.Random.Range(-99999L, 99999L) });
-                        vapezyy.RPC("UnloadMapRPC", NetPlayerToPlayer(GetPlayerFromVRRig(possibly)), new object[] { });
+                        goldentrophy.RPC("SetRoomMapRPC", NetPlayerToPlayer(GetPlayerFromVRRig(possibly)), new object[] { UnityEngine.Random.Range(-99999L, 99999L) });
+                        goldentrophy.RPC("UnloadMapRPC", NetPlayerToPlayer(GetPlayerFromVRRig(possibly)), new object[] { });
                         RPCProtection();
                     }
                 }
@@ -830,10 +845,10 @@ namespace VapeMenu.Mods
                 {
                     delaything = Time.time + 0.1f;
 
-                    PhotonView vapezyy = GameObject.Find("Environment Objects/LocalObjects_Prefab/VirtualStump_CustomMapLobby/ModIOMapsTerminal/NetworkObject").GetComponent<PhotonView>();
+                    PhotonView goldentrophy = GameObject.Find("Environment Objects/LocalObjects_Prefab/VirtualStump_CustomMapLobby/ModIOMapsTerminal/NetworkObject").GetComponent<PhotonView>();
 
-                    vapezyy.RPC("SetRoomMapRPC", RpcTarget.Others, new object[] { UnityEngine.Random.Range(-99999L, 99999L) });
-                    vapezyy.RPC("UnloadMapRPC", RpcTarget.Others, new object[] { });
+                    goldentrophy.RPC("SetRoomMapRPC", RpcTarget.Others, new object[] { UnityEngine.Random.Range(-99999L, 99999L) });
+                    goldentrophy.RPC("UnloadMapRPC", RpcTarget.Others, new object[] { });
                     RPCProtection();
                 }
             }

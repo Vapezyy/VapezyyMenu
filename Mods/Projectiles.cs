@@ -181,15 +181,15 @@ namespace VapeMenu.Mods.Spammers
             GetIndex("RedProj").overlapText = "Red <color=grey>[</color><color=purple>" + Mathf.Floor(red * 10f).ToString() + "</color><color=grey>]</color>";
         }
 
-        public static void Increasepurple()
+        public static void IncreaseGreen()
         {
-            purple += 0.1f;
-            if (purple > 1.05f)
+            green += 0.1f;
+            if (green > 1.05f)
             {
-                purple = 0f;
+                green = 0f;
             }
 
-            GetIndex("purpleProj").overlapText = "purple <color=grey>[</color><color=purple>" + Mathf.Floor(purple * 10f).ToString() + "</color><color=grey>]</color>";
+            GetIndex("GreenProj").overlapText = "Green <color=grey>[</color><color=purple>" + Mathf.Floor(green * 10f).ToString() + "</color><color=grey>]</color>";
         }
 
         public static void IncreaseBlue()
@@ -330,7 +330,7 @@ namespace VapeMenu.Mods.Spammers
                 if (GetIndex("Custom Colored Projectiles").enabled)
                 {
                     randa = red * 255;
-                    randb = purple * 255;
+                    randb = green * 255;
                     randc = blue * 255;
                 }
                 //UnityEngine.Debug.Log("updated stuff");
@@ -448,7 +448,7 @@ namespace VapeMenu.Mods.Spammers
                     if (GetIndex("Custom Colored Projectiles").enabled)
                     {
                         randa = red * 255;
-                        randb = purple * 255;
+                        randb = green * 255;
                         randc = blue * 255;
                     }
 
@@ -650,7 +650,7 @@ namespace VapeMenu.Mods.Spammers
                 if (GetIndex("Custom Colored Projectiles").enabled)
                 {
                     randa = red * 255;
-                    randb = purple * 255;
+                    randb = green * 255;
                     randc = blue * 255;
                 }
 
@@ -756,7 +756,7 @@ namespace VapeMenu.Mods.Spammers
                 if (GetIndex("Custom Colored Projectiles").enabled)
                 {
                     randa = red * 255;
-                    randb = purple * 255;
+                    randb = green * 255;
                     randc = blue * 255;
                 }
 
